@@ -14,7 +14,7 @@ export function VehicleFilter({
   onSelect,
 }: VehicleFilterProps) {
   const filterOptions = [
-    { id: null, name: 'All vehicles', image: undefined },
+    { id: null, name: 'All products', image: undefined },
     ...categories.map((category) => ({
       id: category.id,
       name: category.name,
@@ -25,7 +25,7 @@ export function VehicleFilter({
   return (
     <Container size="1300" py={80}>
       <Group justify="center" gap="md">
-        {filterOptions.slice(0, 10).map((category) => {
+        {filterOptions.slice(0, 6).map((category) => {
           const isActive = selectedCategoryId === category.id
 
           return (
