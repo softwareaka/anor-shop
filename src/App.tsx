@@ -20,6 +20,7 @@ import { AdminLayout } from './layouts/AdminLayout.tsx'
 import { DashboardMainPage } from './pages/admin/DashboardMainPage.tsx'
 import { AdminProductsPage } from './pages/admin/AdminProductsPage.tsx'
 import { AdminCategoriesPage } from './pages/admin/AdminCategoriesPage.tsx'
+import { ProtectedRoute } from './components/auth/ProtectedRoute.tsx'
 
 const theme = createTheme({
   colors: {
@@ -79,20 +80,25 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: '/dashboard',
-    element: <AdminLayout />,
+    element: <ProtectedRoute />,
     children: [
       {
-        index: true,
-        element: <DashboardMainPage />,
-      },
-      {
-        path: 'products',
-        element: <AdminProductsPage />,
-      },
-      {
-        path: 'categories',
-        element: <AdminCategoriesPage />,
+        path: '/dashboard',
+        element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            element: <DashboardMainPage />,
+          },
+          {
+            path: 'products',
+            element: <AdminProductsPage />,
+          },
+          {
+            path: 'categories',
+            element: <AdminCategoriesPage />,
+          },
+        ],
       },
     ],
   },
