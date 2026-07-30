@@ -15,6 +15,7 @@ import { IconPlus, IconCheck } from '@tabler/icons-react'
 import { useCreateProduct } from '../../hooks/useProductMutation'
 import { useForm } from '@mantine/form'
 import type { IProductForm } from '../../types/product'
+import { ProductsTable } from './components/ProductsTable'
 
 export const AdminProductsPage = () => {
   const { mutate, isPending } = useCreateProduct()
@@ -22,7 +23,7 @@ export const AdminProductsPage = () => {
 
   const form = useForm<IProductForm>({
     initialValues: {
-      title: '',
+      title: '',  
       price: 100,
       description: '',
       categoryId: 1,
@@ -134,6 +135,8 @@ export const AdminProductsPage = () => {
           </Stack>
         </form>
       </Modal>
+
+      <ProductsTable />
     </Stack>
   )
 }

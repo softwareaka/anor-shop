@@ -9,7 +9,7 @@ export const useProfile = () => {
     queryKey: ['profile'],
     queryFn: authAPI.getProfile,
     enabled: Boolean(accessToken),
-    staleTime: 5 * 6 * 1000,
+    staleTime: 3 * 1000,
     retry: false,
   })
 }
