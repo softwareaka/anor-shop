@@ -1,4 +1,4 @@
-import { Box, Group } from '@mantine/core'
+import { Box, Group, Container } from '@mantine/core'
 
 import toyotaLogo from '../assets/icons/toyota-logo.svg'
 import fordLogo from '../assets/icons/ford.logo.svg'
@@ -9,7 +9,7 @@ import audiLogo from '../assets/icons/audi-logo.svg'
 
 export const BrandCars = () => {
   return (
-    <section>
+    <Container size={1300}>
       <Box
         bg={'#FAFAFA'}
         mt={60}
@@ -26,6 +26,6 @@ export const BrandCars = () => {
           <img width={82} src={audiLogo} alt="audi logo image" />
         </Group>
       </Box>
-    </section>
+    </Container>
   )
 }
