@@ -20,7 +20,7 @@ import { AdminLayout } from './layouts/AdminLayout.tsx'
 import { DashboardMainPage } from './pages/admin/DashboardMainPage.tsx'
 import { AdminProductsPage } from './pages/admin/AdminProductsPage.tsx'
 import { AdminCategoriesPage } from './pages/admin/AdminCategoriesPage.tsx'
-import { ProtectedRoute } from './components/auth/ProtectedRoute.tsx'
+import { ProtectedRoute } from './shared/lib/routing/ProtectedRoute.tsx'
 
 const theme = createTheme({
   colors: {

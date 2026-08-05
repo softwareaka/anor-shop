@@ -1,4 +1,4 @@
-import { useProducts } from '../hooks/useProducts'
+import { useProducts } from '../entities/products/model/useProducts'
 
 export const TestQuery = () => {
   const { data, isLoading, isError } = useProducts()

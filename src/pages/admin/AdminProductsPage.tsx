@@ -12,7 +12,7 @@ import {
   Textarea,
 } from '@mantine/core'
 import { IconPlus, IconCheck } from '@tabler/icons-react'
-import { useCreateProduct } from '../../hooks/useProductMutation'
+import { useCreateProduct } from '../../features/manage-product/model/useProductMutation'
 import { useForm } from '@mantine/form'
 import type { IProductForm } from '../../types/product'
 import { ProductsTable } from './components/ProductsTable'
@@ -23,7 +23,7 @@ export const AdminProductsPage = () => {
 
   const form = useForm<IProductForm>({
     initialValues: {
-      title: '',  
+      title: '',
       price: 100,
       description: '',
       categoryId: 1,

@@ -2,7 +2,7 @@ import { Anchor, Box, Container, Flex, Group, Title } from '@mantine/core'
 
 import { IconArrowRight } from '@tabler/icons-react'
 
-import { CarCard } from '../../../components/CarCards'
+import { CarCard } from '../../../entities/products/ui/ProductCards'
 import { cars } from '../../../data/Cars'
 import { Link } from 'react-router'
 

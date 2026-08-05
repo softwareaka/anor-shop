@@ -1,4 +1,4 @@
-import { BrandCars } from '../../components/BrandCars'
+import { BrandCars } from '../../widgets/brand-cars/BrandCars'
 import ContactAddress from './components/ContactAddress'
 import ContactBlog from './components/ContactBlog'
 import ContactBooking from './components/ContactBooking'

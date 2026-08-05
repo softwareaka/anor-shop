@@ -11,11 +11,14 @@ import {
 } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 
-import { BrandCars } from '../components/BrandCars'
-import { CarCard } from '../components/CarCards'
-import { VehicleFilter } from '../components/VehicleFilter'
+import { BrandCars } from '../widgets/brand-cars/BrandCars'
+import { CarCard } from '../entities/products/ui/ProductCards'
+import { VehicleFilter } from '../features/filter-by-category/ui/VehicleFilter'
 
-import { useCategories, useProducts } from '../hooks/useProducts'
+import {
+  useCategories,
+  useProducts,
+} from '../entities/products/model/useProducts'
 
 export const VehiclesPage = () => {
   const ITEMS_PER_PAGE = 6

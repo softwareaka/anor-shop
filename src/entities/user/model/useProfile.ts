@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useAuthStore } from '../store/auth.store'
+import { useAuthStore } from '../../../shared/model/auth.store'
 import { authAPI } from '../api/auth'
 
 export const useProfile = () => {

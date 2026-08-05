@@ -21,7 +21,7 @@ import {
 } from '@tabler/icons-react'
 import { Link } from 'react-router'
 
-import { useLogin } from '../hooks/useLogin'
+import { useLogin } from '../features/auth-by-email/model/useLogin'
 import { useForm } from '@mantine/form'
 import type { ILoginPayload } from '../types/auth'
 

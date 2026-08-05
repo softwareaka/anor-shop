@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { useAuthStore } from '../store/auth.store'
+import { useAuthStore } from '../../../shared/model/auth.store'
 import { useNavigate } from 'react-router'
-import { authAPI } from '../api/auth'
+import { authAPI } from '../../../entities/user/api/auth'
 import { notifications } from '@mantine/notifications'
 
 export const useLogin = () => {

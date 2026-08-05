@@ -1,6 +1,6 @@
 import { Navigate, Outlet, useLocation } from 'react-router'
-import { useAuthStore } from '../../store/auth.store'
-import { useProfile } from '../../hooks/useProfile'
+import { useAuthStore } from '../../model/auth.store'
+import { useProfile } from '../../../entities/user/model/useProfile'
 
 import { Center, Loader } from '@mantine/core'
 

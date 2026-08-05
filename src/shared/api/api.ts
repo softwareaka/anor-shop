@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useAuthStore } from '../store/auth.store'
+import { useAuthStore } from '../model/auth.store'
 
 export const $api = axios.create({
   baseURL: 'https://api.escuelajs.co/api/v1',

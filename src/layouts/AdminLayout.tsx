@@ -20,8 +20,8 @@ import {
   IconSettings,
 } from '@tabler/icons-react'
 import { Link, Outlet, useLocation } from 'react-router'
-import { useLogout } from '../hooks/useLogout'
-import { useProfile } from '../hooks/useProfile'
+import { useLogout } from '../features/auth-by-email/model/useLogout'
+import { useProfile } from '../entities/user/model/useProfile'
 
 export const AdminLayout = () => {
   const logout = useLogout()

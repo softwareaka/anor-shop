@@ -1,6 +1,6 @@
 import { Container, Group, Button } from '@mantine/core'
 
-import type { ICategory } from '../types/product'
+import type { ICategory } from '../../../types/product'
 
 type VehicleFilterProps = {
   categories: ICategory[]

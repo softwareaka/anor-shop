@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { ITokens } from '../types/auth'
+import type { ITokens } from '../../types/auth'
 
 interface IAuthState {
   accessToken: string | null
