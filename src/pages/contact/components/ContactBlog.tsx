@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Image, Stack, Text, Title } from '@mantine/core'
 
-import blog1 from '../../../assets/images/blurCarImage.png'
+import blog1 from '@/shared/assets/images/blurCarImage.png'
 
 export default function ContactBlog() {
   return (

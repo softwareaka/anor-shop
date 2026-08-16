@@ -2,7 +2,7 @@ import type {
   ICategory,
   IProduct,
   TProductParams,
-} from '../../../types/product.ts'
+} from '../../../shared/types/product.ts'
 import { $api } from '../../../shared/api/api.ts'
 
 const baseURL = '/products'

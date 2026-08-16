@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Flex,
   Box,
@@ -8,19 +8,18 @@ import {
   SimpleGrid,
   Pagination,
   Group,
+  Text,
 } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 
-import { BrandCars } from '../widgets/brand-cars/BrandCars'
-import { CarCard } from '../entities/products/ui/ProductCards'
-import { VehicleFilter } from '../features/filter-by-category/ui/VehicleFilter'
+import { BrandCars } from '../../widgets/brand-cars/BrandCars'
+import { CarCard } from '../../entities/products/ui/ProductCards'
+import { VehicleFilter } from '../../features/filter-by-category/ui/VehicleFilter'
 
-import {
-  useCategories,
-  useProducts,
-} from '../entities/products/model/useProducts'
+import { useProducts } from '../../entities/products/model/useProducts'
+import { useCategories } from '@/entities/category/model/useCategories'
 
-export const VehiclesPage = () => {
+export const ProductsPage = () => {
   const ITEMS_PER_PAGE = 6
 
   const [activePage, setActivePage] = useState(1)
@@ -32,9 +31,31 @@ export const VehiclesPage = () => {
     useCategories()
   const { data = [], isLoading, isError } = useProducts(selectedCategoryId)
 
-  const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE)
+  const totalPages = Math.max(1, Math.ceil(data.length / ITEMS_PER_PAGE))
   const startIndex = (activePage - 1) * ITEMS_PER_PAGE
   const paginateData = data.slice(startIndex, startIndex + ITEMS_PER_PAGE)
+
+  // Reset pagination to page 1 whenever category filter changes or activePage exceeds totalPages
+  useEffect(() => {
+    setActivePage(1)
+  }, [selectedCategoryId])
+
+  useEffect(() => {
+    if (activePage > totalPages) {
+      setActivePage(totalPages)
+    }
+  }, [totalPages, activePage])
+
+  // Handle side effect for error notification cleanly in useEffect
+  useEffect(() => {
+    if (isError) {
+      notifications.show({
+        title: 'Error Occurred',
+        message: 'Failed to load vehicles. Please try again later.',
+        color: 'red',
+      })
+    }
+  }, [isError])
 
   if (isLoading || isCategoriesLoading) {
     return (
@@ -51,12 +72,18 @@ export const VehiclesPage = () => {
   }
 
   if (isError) {
-    notifications.show({
-      title: 'Error Occurred',
-      message: 'Failed to load vehicles. Please try again later.',
-      color: 'red',
-    })
-    return null
+    return (
+      <Container size={1300} mt={60}>
+        <Text ta="center" c="red" fz={18} fw={600}>
+          Failed to load vehicles. Please refresh or try again later.
+        </Text>
+      </Container>
+    )
+  }
+
+  const handleCategorySelect = (id: number | null) => {
+    setSelectedCategoryId(id)
+    setActivePage(1)
   }
 
   return (
@@ -69,7 +96,7 @@ export const VehiclesPage = () => {
         <VehicleFilter
           categories={categories}
           selectedCategoryId={selectedCategoryId}
-          onSelect={setSelectedCategoryId}
+          onSelect={handleCategorySelect}
         />
 
         <Flex wrap={'wrap'} mt={40} justify={'space-between'} gap={24}>
@@ -77,12 +104,12 @@ export const VehiclesPage = () => {
             <Box key={car.id}>
               <CarCard
                 title={
-                  car.title.length > 10
+                  car.title.length > 20
                     ? car.title.slice(0, 20) + '...'
                     : car.title
                 }
-                images={car.images[0]}
-                type={car.category.name}
+                images={car.images?.[0] || 'https://placehold.co/600x400'}
+                type={car.category?.name || 'Uncategorized'}
                 price={car.price}
                 transmission="Automatic"
                 fuel="PB 95"

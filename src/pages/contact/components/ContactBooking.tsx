@@ -13,7 +13,7 @@ import {
 import { DateInput } from '@mantine/dates'
 import { IconCalendar } from '@tabler/icons-react'
 
-import contactImage from '../../../assets/images/mercImage.jpg'
+import contactImage from '@/shared/assets/images/mercImage.jpg'
 
 export default function ContactBooking() {
   return (

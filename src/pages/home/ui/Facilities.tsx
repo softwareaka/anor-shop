@@ -1,6 +1,6 @@
 import { Container, Group, Stack, Text, Title } from '@mantine/core'
 
-import locationIcon from '../../../assets/icons/location-icon2.svg'
+import locationIcon from '@/shared/assets/icons/location-icon2.svg'
 
 export const Facilities = () => {
   return (

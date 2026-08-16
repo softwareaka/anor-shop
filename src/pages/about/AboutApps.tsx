@@ -8,9 +8,9 @@ import {
   Title,
 } from '@mantine/core'
 
-import phoneImage from '../../assets/images/phoneImage.png'
-import appStoreLogo from '../../assets/images/appStoreImage.png'
-import googlePlayLogo from '../../assets/images/googlePlayImage.png'
+import phoneImage from '@/shared/assets/images/phoneImage.png'
+import appStoreLogo from '@/shared/assets/images/appStoreImage.png'
+import googlePlayLogo from '@/shared/assets/images/googlePlayImage.png'
 
 export const AboutApps = () => {
   return (

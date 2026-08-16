@@ -3,10 +3,14 @@ import { Anchor, Box, Container, Flex, Group, Title } from '@mantine/core'
 import { IconArrowRight } from '@tabler/icons-react'
 
 import { CarCard } from '../../../entities/products/ui/ProductCards'
-import { cars } from '../../../data/Cars'
 import { Link } from 'react-router'
+import { useProducts } from '@/entities/products/model/useProducts'
 
 export function RentCar() {
+  const { data = [], isLoading } = useProducts()
+
+  console.log(data)
+
   return (
     <Container size="1300">
       <Group justify="space-between" mb={40}>
@@ -31,9 +35,20 @@ export function RentCar() {
       </Group>
 
       <Flex wrap={'wrap'} justify={'space-between'} gap={24}>
-        {cars.slice(0, 6).map((car) => (
+        {data.slice(0, 6).map((car) => (
           <Box key={car.id}>
-            <CarCard {...car} title={car.name} images={car.image} />
+            <CarCard
+              title={
+                car.title.length > 20
+                  ? car.title.slice(0, 20) + '...'
+                  : car.title
+              }
+              images={car.images?.[0] || 'https://placehold.co/600x400'}
+              type={car.category?.name || 'Uncategorized'}
+              price={car.price}
+              transmission="Automatic"
+              fuel="PB 95"
+            />
           </Box>
         ))}
       </Flex>

@@ -1,5 +1,5 @@
 import { $api } from '../../../shared/api/api'
-import type { ITokens, ILoginPayload, IUser } from '../../../types/auth'
+import type { ITokens, ILoginPayload, IUser } from '../../../shared/types/auth'
 
 export const authAPI = {
   login: async (payload: ILoginPayload): Promise<ITokens> => {

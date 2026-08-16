@@ -25,7 +25,7 @@ import { notifications } from '@mantine/notifications'
 import { useProducts } from '../../../entities/products/model/useProducts'
 import { useDeleteProduct } from '../../../features/manage-product/model/useProductMutation'
 import { ProductEditModal } from './ProductEditModal'
-import type { IProduct } from '../../../types/product'
+import type { IProduct } from '../../../shared/types/product'
 
 export const ProductsTable = () => {
   const ITEMS_PER_PAGE = 5

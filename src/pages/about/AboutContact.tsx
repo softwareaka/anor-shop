@@ -9,7 +9,7 @@ import {
   Title,
 } from '@mantine/core'
 
-import carImage from '../../assets/images/bmwCar.png'
+import carImage from '@/shared/assets/images/bmwCar.png'
 // import tirePattern from '../assets/images/tire-pattern.png'
 
 export const AboutContact = () => {

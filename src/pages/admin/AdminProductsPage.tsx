@@ -14,7 +14,7 @@ import {
 import { IconPlus, IconCheck } from '@tabler/icons-react'
 import { useCreateProduct } from '../../features/manage-product/model/useProductMutation'
 import { useForm } from '@mantine/form'
-import type { IProductForm } from '../../types/product'
+import type { IProductForm } from '../../shared/types/product'
 import { ProductsTable } from './components/ProductsTable'
 
 export const AdminProductsPage = () => {

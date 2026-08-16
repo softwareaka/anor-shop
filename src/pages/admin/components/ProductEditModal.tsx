@@ -17,12 +17,12 @@ import { useForm } from '@mantine/form'
 import { notifications } from '@mantine/notifications'
 import { IconPlus, IconPencil, IconCheck, IconPhoto } from '@tabler/icons-react'
 
-import { useCategories } from '../../../entities/products/model/useProducts'
+import { useCategories } from '@/entities/category/model/useCategories'
 import {
   useCreateProduct,
   useUpdateProduct,
 } from '../../../features/manage-product/model/useProductMutation'
-import type { IProduct, IProductForm } from '../../../types/product'
+import type { IProduct, IProductForm } from '../../../shared/types/product'
 
 interface ProductEditModalProps {
   modalOpened: boolean

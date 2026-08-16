@@ -8,19 +8,19 @@ import {
   Title,
 } from '@mantine/core'
 
-import rentCarLogo from '../assets/images/rentCar-logo.svg'
-import locationIcon from '../assets/icons/location-icon.svg'
-import messageIcon from '../assets/icons/message-icon.svg'
-import phoneIcon from '../assets/icons/phone-icon_bg.svg'
-import facebookIcon from '../assets/icons/facebook-icon.svg'
-import appStoreLogo from '../assets/images/appstore-logo.svg'
+import { Logo } from '@/shared/ui/Logo'
+import locationIcon from '@/shared/assets/icons/location-icon.svg'
+import messageIcon from '@/shared/assets/icons/message-icon.svg'
+import phoneIcon from '@/shared/assets/icons/phone-icon_bg.svg'
+import facebookIcon from '@/shared/assets/icons/facebook-icon.svg'
+import appStoreLogo from '@/shared/assets/images/appstore-logo.svg'
 
 export const Footer = () => {
   return (
     <footer>
       <Container size="1300" py={90}>
         <Group justify="space-between">
-          <img src={rentCarLogo} alt="Rent Car logo image" />
+          <Logo size={42} />
 
           <Group>
             <img src={locationIcon} alt="location icon logo" />

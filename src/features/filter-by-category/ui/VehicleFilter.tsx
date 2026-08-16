@@ -1,21 +1,21 @@
 import { Container, Group, Button } from '@mantine/core'
 
-import type { ICategory } from '../../../types/product'
+import type { ICategory } from '../../../shared/types/product'
 
 type VehicleFilterProps = {
-  categories: ICategory[]
+  categories?: ICategory[]
   selectedCategoryId: number | null
   onSelect: (categoryId: number | null) => void
 }
 
 export function VehicleFilter({
-  categories,
+  categories = [],
   selectedCategoryId,
   onSelect,
 }: VehicleFilterProps) {
   const filterOptions = [
     { id: null, name: 'All products', image: undefined },
-    ...categories.map((category) => ({
+    ...(Array.isArray(categories) ? categories : []).map((category) => ({
       id: category.id,
       name: category.name,
       image: category.image,
@@ -23,9 +23,9 @@ export function VehicleFilter({
   ]
 
   return (
-    <Container size="1300" py={80}>
-      <Group justify="center" gap="md">
-        {filterOptions.slice(0, 6).map((category) => {
+    <Container size="1300" py={40}>
+      <Group justify="center" gap="md" wrap="wrap">
+        {filterOptions.map((category) => {
           const isActive = selectedCategoryId === category.id
 
           return (
@@ -44,6 +44,7 @@ export function VehicleFilter({
                     alt={category.name}
                     width={18}
                     height={18}
+                    style={{ objectFit: 'contain' }}
                   />
                 ) : undefined
               }

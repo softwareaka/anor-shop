@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { productsApi } from '../../../entities/products/api/products'
-import type { IProductForm } from '../../../types/product'
-import { PRODUCTS_KEY } from '../../../entities/products/model/useProducts'
+import { productsApi } from '@/entities/products/api/products'
+import type { IProductForm } from '@/shared/types/product'
+import { PRODUCTS_KEY } from '@/entities/products/model/useProducts'
 
 export const useCreateProduct = () => {
   const queryClient = useQueryClient()

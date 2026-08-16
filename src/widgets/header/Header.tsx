@@ -1,8 +1,8 @@
 import { Container, Group, Text, Anchor, ActionIcon } from '@mantine/core'
 import { Link } from 'react-router'
 
-import rentCarLogoImage from '../assets/images/rentCar-logo.svg'
-import phoneIconImage from '../assets/icons/phone-icon.svg'
+import { Logo } from '@/shared/ui/Logo'
+import phoneIconImage from '@/shared/assets/icons/phone-icon.svg'
 
 export const Header = () => {
   return (
@@ -10,7 +10,7 @@ export const Header = () => {
       <Container size="1300" h={70}>
         <Group h="100%" justify="space-between">
           <Anchor component={Link} to={'/'} underline="never">
-            <img src={rentCarLogoImage} alt="Rent Car logo image" />
+            <Logo size={36} />
           </Anchor>
           <Group gap={40}>
             <Anchor component={Link} to={'/'} c="dark" underline="never">
@@ -23,7 +23,7 @@ export const Header = () => {
               c="dark"
               underline="never"
             >
-              Vehicles
+              Products
             </Anchor>
 
             <Anchor component={Link} to={'/details'} c="dark" underline="never">

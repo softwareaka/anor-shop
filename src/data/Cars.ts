@@ -1,5 +1,5 @@
 // import mercedes from '../assets/images/mercedes.png'
-import porsche from '../assets/images/porsche-image.png'
+import porsche from '@/shared/assets/images/porsche-image.png'
 // import toyota from '../assets/images/toyota.png'
 
 export const cars = [

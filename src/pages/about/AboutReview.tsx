@@ -9,7 +9,7 @@ import {
 } from '@mantine/core'
 import { IconQuoteFilled } from '@tabler/icons-react'
 
-import person1 from '../../assets/icons/customerIcon.svg'
+import person1 from '@/shared/assets/icons/customerIcon.svg'
 
 export const AboutReview = () => {
   return (
